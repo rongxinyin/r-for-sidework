@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Combined Program Report</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .main-container {
+        max-width: 940px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .iframe-container {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+      }
+
+      .main-header {
+        font-size: 28px;
+        font-weight: bold;
+        color: #6ccff6;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .sub-header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #6ccff6;
+        margin-bottom: 10px;
+      }
+    .table-header {
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+      .description {
+        margin-bottom: 20px;
+      }
+      .strategy,
+      .funding {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .description-text {
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+
+      .logo-profile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+      .logo {
+        width: 30%;
+      }
+      .profile {
+        font-weight: bold;
+        text-align: right;
+      }
+
+      .blue-header {
+        background-color: #6ccff6;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+      .score-card-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      .score-card-table th,
+      .score-card-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      .score-card-table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      .score-card-table td {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid main-container">
+      <div id="header">
+        <h1 class="title toc-ignore">Program Profile Report</h1>
+        <h4 class="author">Author Name</h4>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <!-- Left Content -->
+        <div style="text-align: left; flex: 1;">
+          <div class="main-header" style="text-align: left;">Agency: Chapter 510 Ink</div>
+          <div class="sub-header" style="text-align: left;">Program: Writing to Readiness</div>
+        </div>
+        
+        <!-- Logo Content -->
+        <div style="text-align: right; flex-shrink: 0;">
+          <img
+            src="OFCY-Logo2C-color2.jpg"
+            alt="OFCY Logo"
+            style="max-width: 150px; height: auto;"
+          />
+          <div style="font-size: 14px; font-weight: bold; text-align: center; margin-top: 10px;">
+            End-of-Year Profile<br>FY2021-2022
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        <p class="strategy">
+          Strategy: Engagement and Success for Elementary and Middle School
+          Students
+        </p>
+        <p class="funding">Annual Grant Funding: $34,000</p>
+        <p class="description-text">
+          Chapter 510’s Writing to Readiness program will support all 120 eighth
+          graders at Westlake Middle School during the 2019-2020 school year
+          with thrice-weekly, in-class writing tutoring, and will provide daily
+          after-school literacy support services to those eighth graders who are
+          not yet considered high school-ready. Our goal is to increase Westlake
+          Middle School’s entire eighth grade class’ readiness to graduate and
+          be successful in high school.
+        </p>
+      </div>
+      <div class="blue-header">Program Score Card</div>
+      <p>
+        These select performance measures were identified by program staff,
+        OFCY, and the evaluation team as indicative of programs’ quality and
+        success in working towards the strategic objectives for the Engagement
+        and Success for Elementary and Middle School Students strategy.
+      </p>
+      
+      <div class="iframe-container" style="width: 100%; margin-bottom: 10px;">
+        <!-- Sub-header and iframe compact layout -->
+        <div class="sub-header" style="margin-bottom: 0px;">
+          Program Achievements: How much did we do?
+        </div>
+        <iframe
+          src="program_served_table.html"
+          style="width: 100%; height: 150px; margin-bottom: 10px;"
+        ></iframe>
+      
+        <div class="sub-header" style="margin-bottom: 0px;">
+          Program Achievements: How well did we do it?
+        </div>
+        <p class="table-header" style="margin-bottom: 0px;">
+          Percent of Youth in Agreement
+        </p>
+        <iframe
+          src="question3_interactive_table.html"
+          style="width: 940px; height: 400px; margin-bottom: 10px;"
+        ></iframe>
+      </div>
+
+      <!-- <div class="container-fluid main-container"> -->
+      <div class="blue-header">Youth Demographics</div>
+      <div class="iframe-container">
+        <iframe src="Age_Ethnicity_Distribution_Interactive.html"
+                style="width: 100%; height: 400px; margin-bottom: 10px;"
+        ></iframe>
+        <iframe src="Gender_Distribution_Interactive.html"
+                style="width: 100%; height: 300px; margin-bottom: 10px;"
+        ></iframe>
+        <div class="blue-header">Distribution of Participants by Zip Code</div>
+        <div class="iframe-container">
+          <iframe 
+            src="zipcode_map_and_bar.html"
+            ></iframe>
+        </div>
+      </div>
+
+      <div class="blue-header" style="font-weight: bold; text-align: center;">
+        Youth Survey Results (Number of surveys collected:#)
+        <div style="font-size: 14px; font-weight: bold; text-align: center; margin-top: 10px;">
+            General Youth Development Outcomes
+          </div>
+      </div>
+      <p class="description-text">
+        Outcome scores reflect how of ten youth agreed or strongly agreed with
+        the questions mapped to each outcome.The strategy-level scores reflects
+        all youth who completed surveys at 4 Engagement and Sucess for
+        Elementary and Middle School Students programs.
+      </p>
+      <div class="iframe-container">
+        <!-- <h2>Section 2: file2.html</h2> -->
+        <div class="table-header">Program Scores</div>
+        <iframe 
+          src="survey_outcome_percentage_table_DT.html"
+          style="width: 100%; height: 800px; margin-bottom: 10px;"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>

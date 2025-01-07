@@ -1,0 +1,15 @@
+Survey.Question,Question.Number
+What is the name of your program?,question_1
+Who runs this program?,question_2
+Please tell us what you think about the program by sharing how much you agree with each of these statements.,question_3
+Placeholder,question_4
+Please tell us how you think this program affects you by sharing how much you agree with each of these statements.,question_5
+Did this program assist you in getting an unpaid internship or other on-the-job training?,question_6
+Did this program assist you in getting a paid internship or job?,question_7
+How much do you earn per hour?,question_8
+"How likely are you to tell a friend, sibling, or other family member to join this program?",question_9
+What is your gender identity?,question_10
+Which of the following best describes you?,question_11
+What is your race / ethnicity? Please select all that apply.,question_12
+What grade are you in?,question_13
+"If you are not in school right now, what is the highest level of school you have completed so far?",question_14

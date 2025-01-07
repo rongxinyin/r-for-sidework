@@ -1,0 +1,135 @@
+---
+title: "Program Profile Report"
+author: "Your Name"
+output: 
+  pdf_document: default
+  html_document: default
+---
+
+<style>
+  /* Styling for the main headers */
+  .main-header {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6CCFF6;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sub-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6CCFF6;
+    margin-bottom: 10px;
+  }
+
+  /* Styling for the description and funding section */
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .strategy, .funding {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .description-text {
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* Styling for the logo and profile */
+  .logo-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    width: 30%;
+  }
+
+  .profile {
+    font-weight: bold;
+    text-align: right;
+  }
+
+  /* Styling for the program achievements section */
+  .blue-header {
+    background-color: #6CCFF6;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .score-card-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  .score-card-table th, .score-card-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .score-card-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  .score-card-table td {
+    text-align: center;
+  }
+</style>
+
+<div class="main-header">Agency: Chapter 510 Ink</div>
+<div class="sub-header">Program: Writing to Readiness</div>
+
+<div class="logo-profile">
+  <div class="logo">
+    <img src=".\data\OFCY-Logo2C-color2.jpg" alt="OFCY Logo" style="width:100%;">
+  </div>
+  <div class="profile">
+    End-of-Year Profile<br>FY2021-2022
+  </div>
+</div>
+
+<div class="description">
+  <p class="strategy">Strategy: Engagement and Success for Elementary and Middle School Students</p>
+  <p class="funding">Annual Grant Funding: $34,000</p>
+  <p class="description-text">
+    Chapter 510’s Writing to Readiness program will support all 120 eighth graders at Westlake Middle School during the 2019-2020 school year with thrice-weekly, in-class writing tutoring, and will provide daily after-school literacy support services to those eighth graders who are not yet considered high school-ready. Our goal is to increase Westlake Middle School’s entire eighth grade class’ readiness to graduate and be successful in high school.
+  </p>
+</div>
+
+<div class="blue-header">Program Score Card</div>
+
+<p>These select performance measures were identified by program staff, OFCY, and the evaluation team as indicative of programs' quality and success in working towards the strategic objectives for the Engagement and Success for Elementary and Middle School Students strategy.</p>
+
+<div class="sub-header">Program Achievements: How much did we do?</div>
+
+<table class="score-card-table">
+  <tr>
+    <th>Metric</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Number of Youth Served</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td>Total Hours of Service Provided</td>
+    <td>458</td>
+  </tr>
+  <tr>
+    <td>Average Hours of Service per Youth</td>
+    <td>19</td>
+  </tr>
+</table>

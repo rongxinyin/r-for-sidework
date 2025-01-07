@@ -1,0 +1,360 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Program Profile Report},
+  pdfauthor={Your Name},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Program Profile Report}
+\author{Your Name}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{Introduction}\label{introduction}
+
+This report presents an analysis of program performance and demographic
+data.
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'kableExtra'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     group_rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/Oakland Fund for Children and Youth OFCY.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Respondent.ID Collector.ID             Start.Date               End.Date
+## 1            NA           NA                                              
+## 2  118766368992    456136887 12/17/2024 08:38:01 PM 12/17/2024 08:42:03 PM
+## 3  118766282455    456136887 12/17/2024 05:22:28 PM 12/17/2024 05:26:57 PM
+## 4  118766281985    456136887 12/17/2024 05:19:37 PM 12/17/2024 05:25:37 PM
+## 5  118766280439    456136887 12/17/2024 05:19:02 PM 12/17/2024 05:21:27 PM
+## 6  118766279480    456136887 12/17/2024 05:15:18 PM 12/17/2024 05:19:40 PM
+##       IP.Address Email.Address First.Name Last.Name Custom.Data.1
+## 1                           NA         NA        NA            NA
+## 2  67.169.157.11            NA         NA        NA            NA
+## 3  104.28.123.70            NA         NA        NA            NA
+## 4 50.235.136.171            NA         NA        NA            NA
+## 5 50.235.136.171            NA         NA        NA            NA
+## 6 50.235.136.171            NA         NA        NA            NA
+##                                                                          What.is.the.name.of.your.program.
+## 1                                                                                                 Response
+## 2 Health Excellence & Academic Leadership (HEAL) High School Healthcare Internship / Alameda Health System
+## 3 Health Excellence & Academic Leadership (HEAL) High School Healthcare Internship / Alameda Health System
+## 4 Health Excellence & Academic Leadership (HEAL) High School Healthcare Internship / Alameda Health System
+## 5 Health Excellence & Academic Leadership (HEAL) High School Healthcare Internship / Alameda Health System
+## 6 Health Excellence & Academic Leadership (HEAL) High School Healthcare Internship / Alameda Health System
+##   Who.runs.this.program.
+## 1    Open-Ended Response
+## 2              Ms.Davis 
+## 3              Ms. Davis
+## 4             Ms. Davis!
+## 5              Ms. Davis
+## 6           Amber Davis 
+##   Please.tell.us.what.you.think.about.the.program.by.sharing.how.much.you.agree.with.each.of.these.statements.
+## 1                                                             This program helps me to think about the future.
+## 2                                                                                               Strongly Agree
+## 3                                                                                               Strongly Agree
+## 4                                                                                            Strongly Disagree
+## 5                                                                                               Strongly Agree
+## 6                                                                                               Strongly Agree
+##                                                                                X
+## 1 There is an adult in this program who notices when I am upset about something.
+## 2                                                                 Strongly Agree
+## 3                                                                 Strongly Agree
+## 4                                                                       Not Sure
+## 5                                                                 Strongly Agree
+## 6                                                                 Strongly Agree
+##                                  X.1
+## 1 In this program, I try new things.
+## 2                     Strongly Agree
+## 3                              Agree
+## 4                  Strongly Disagree
+## 5                     Strongly Agree
+## 6                     Strongly Agree
+##                                                                         X.2
+## 1 Since coming to this program, I feel more comfortable sharing my opinion.
+## 2                                                                     Agree
+## 3                                                                     Agree
+## 4                                                         Strongly Disagree
+## 5                                                            Strongly Agree
+## 6                                                            Strongly Agree
+##                                                        X.3
+## 1 The adults in this program tell me what I am doing well.
+## 2                                                    Agree
+## 3                                                    Agree
+## 4                                        Strongly Disagree
+## 5                                           Strongly Agree
+## 6                                           Strongly Agree
+##                                                                         X.4
+## 1 At this program, I get the opportunity to talk about what I have learned.
+## 2                                                            Strongly Agree
+## 3                                                            Strongly Agree
+## 4                                                         Strongly Disagree
+## 5                                                            Strongly Agree
+## 6                                                            Strongly Agree
+##                                         Placeholder
+## 1 How satisfied are you with how this program runs?
+## 2                                5 (Very Satisfied)
+## 3                                                 4
+## 4                                5 (Very Satisfied)
+## 5                                5 (Very Satisfied)
+## 6                                                 4
+##     Please.tell.us.how.you.think.this.program.affects.you.by.sharing.how.much.you.agree.with.each.of.these.statements.
+## 1 At this program, I learned what is expected in a work setting (e.g., punctuality, appropriate dress, communication).
+## 2                                                                                                       Strongly Agree
+## 3                                                                                                       Strongly Agree
+## 4                                                                                                             Not Sure
+## 5                                                                                                       Strongly Agree
+## 6                                                                                                       Strongly Agree
+##                                                                                                      X.5
+## 1 This program helped me understand what additional skills I may need for industries I am interested in.
+## 2                                                                                         Strongly Agree
+## 3                                                                                         Strongly Agree
+## 4                                                                                      Strongly Disagree
+## 5                                                                                         Strongly Agree
+## 6                                                                                         Strongly Agree
+##                                                                              X.6
+## 1 I have a resume and know how to navigate the job search and interview process.
+## 2                                                                 Strongly Agree
+## 3                                                                          Agree
+## 4                                                              Strongly Disagree
+## 5                                                                 Strongly Agree
+## 6                                                                 Strongly Agree
+##   Did.this.program.assist.you.in.getting.an.unpaid.internship.or.other.on.the.job.training.
+## 1                                                                                  Response
+## 2                                                                                        No
+## 3                                                                                        No
+## 4                                                                                       Yes
+## 5                                                                                        No
+## 6                                                                                        No
+##   Did.this.program.assist.you.in.getting.a.paid.internship.or.job.
+## 1                                                         Response
+## 2                                                               No
+## 3                                                               No
+## 4                                                              Yes
+## 5                                                               No
+## 6                                                               No
+##                                                                            How.much.do.you.earn.per.hour.
+## 1                                                                                     Open-Ended Response
+## 2                                                                                                        
+## 3                                                                                                        
+## 4 $0 i don't get paid by the hour and internships with lump sum payment are my only income at the moment.
+## 5                                                                                                        
+## 6                                                                                                        
+##   How.likely.are.you.to.tell.a.friend..sibling..or.other.family.member.to.join.this.program.
+## 1                                                                                   Response
+## 2                                                                           10 (very likely)
+## 3                                                                           10 (very likely)
+## 4                                                                           10 (very likely)
+## 5                                                                           10 (very likely)
+## 6                                                                           10 (very likely)
+##                                    What.is.your.gender.identity.
+## 1                                                       Response
+## 2                                                         Female
+## 3                                                         Female
+## 4 I prefer to describe my own gender identity (please describe):
+## 5                                                         Female
+## 6                                                           Male
+##                                                              X.7
+## 1 I prefer to describe my own gender identity (please describe):
+## 2                                                               
+## 3                                                               
+## 4                                                    Gendervoid 
+## 5                                                               
+## 6                                                               
+##   Which.of.the.following.best.describes.you.
+## 1                                   Response
+## 2                    Heterosexual / Straight
+## 3                    Heterosexual / Straight
+## 4                                     LGBTQ+
+## 5                    Heterosexual / Straight
+## 6                    Heterosexual / Straight
+##   What.is.your.race...ethnicity..Please.select.all.that.apply.
+## 1                                     African American / Black
+## 2                                                             
+## 3                                     African American / Black
+## 4                                                             
+## 5                                                             
+## 6                                                             
+##                 X.8                      X.9                             X.10
+## 1 Latino / Hispanic Asian / Pacific Islander Native American / Alaskan Native
+## 2                   Asian / Pacific Islander                                 
+## 3 Latino / Hispanic                                                          
+## 4                   Asian / Pacific Islander                                 
+## 5                   Asian / Pacific Islander                                 
+## 6                                                                            
+##    X.11                           X.12                    X.13
+## 1 White Middle Eastern / North African Multiracial or biracial
+## 2                                                             
+## 3 White                                                       
+## 4                                                             
+## 5                                                             
+## 6 White                                                       
+##                  X.14                     X.15   What.grade.are.you.in.
+## 1 I prefer not to say Other (please describe):                 Response
+## 2                                                                  11th
+## 3                                                                  11th
+## 4                                              Other (please describe):
+## 5                                                                  10th
+## 6                                                                  12th
+##                                   X.16
+## 1             Other (please describe):
+## 2                                     
+## 3                                     
+## 4 Transitioning to community college. 
+## 5                                     
+## 6                                     
+##   If.you.are.not.in.school.right.now..what.is.the.highest.level.of.school.you.have.completed.so.far..
+## 1                                                                                            Response
+## 2                                                                                                10th
+## 3                                                                    Still in School (Middle or High)
+## 4                                                                                          HSD or GED
+## 5                                                                    Still in School (Middle or High)
+## 6                                                                                                11th
+\end{verbatim}
+
+\end{document}
